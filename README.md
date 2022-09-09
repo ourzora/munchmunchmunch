@@ -1,5 +1,7 @@
 # Zora Create / Mint Page Template
 
+<img width="1431" alt="Screen Shot 2022-09-09 at 6 01 03 pm" src="https://user-images.githubusercontent.com/10325/189302011-7a12378c-8e0e-4433-ad6c-e36140b59e26.png" style="max-width: 600px">
+
 Demo site: <https://mint-page-template.vercel.app/>
 
 ## Step 1. Creating a mintable collection
