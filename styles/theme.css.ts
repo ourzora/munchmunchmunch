@@ -6,7 +6,7 @@ import { createTheme, style } from '@vanilla-extract/css'
 const { colors, shadows } = colorTheme({
   foreground: '#252329',
   background: '#ffffff',
-  accent: '#92ea22',
+  accent: '#000000',
   positive: '#92ea22',
 })
 
@@ -25,7 +25,7 @@ export const customTheme = createTheme(theme, {
     ...colors,
     secondary: colors.primary,
     tertiary: colors.primary,
-    onAccent: '#3D3B40',
+    onAccent: '#ffffff',
     onNegative: '#ffffff',
   },
   radii: {
