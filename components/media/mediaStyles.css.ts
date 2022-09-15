@@ -14,14 +14,14 @@ export const audioButtons = style({
 
 export const audioGrid = style({
   display: 'grid',
-  gridTemplateColumns: '400px 1fr',
-  gap: '32px',
+  gridTemplateColumns: '300px 1fr',
+  gap: '4px',
   maxWidth: maxWidthValues.maxWidth + 200,
   margin: 'auto',
   '@media': {
     'screen and (max-width: 768px)': {
       gridTemplateColumns: '1fr',
-      gap: '16px',
+      gap: '6px',
     },
   },
 })
