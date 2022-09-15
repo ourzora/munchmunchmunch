@@ -4,8 +4,7 @@ import { useDropMetadataContract } from 'providers/DropMetadataProvider'
 import { useState } from 'react'
 import { useSaleStatus } from 'hooks/useSaleStatus'
 import { useDisconnect } from 'wagmi'
-import { ipfsImage } from '@lib/helpers'
-import { maxWidth, heroImage, wrapWords } from 'styles/styles.css'
+import { maxWidth, wrapWords } from 'styles/styles.css'
 import { MintComponent } from '@components/zord/MintComponent'
 import { MintDetails } from '@components/zord/MintDetails'
 import { PresaleComponent } from '@components/zord/PresaleComponent'
@@ -20,6 +19,10 @@ import {
   Paragraph,
   SpinnerOG,
 } from '@zoralabs/zord'
+import { AudioRenderer } from './media/AudioRenderer'
+import { ipfsImage } from '@lib/helpers'
+
+import React from 'react'
 
 export function Collection({
   collection,
@@ -32,7 +35,7 @@ export function Collection({
   const { disconnect } = useDisconnect()
   const { presaleExists, saleNotStarted, saleIsFinished } = useSaleStatus({ collection })
   const [showPresale, setShowPresale] = useState(saleNotStarted && !saleIsFinished)
-
+  
   return (
     <Flex
       mt="x3"
@@ -44,10 +47,14 @@ export function Collection({
       style={{ maxWidth: 1360, margin: 'auto', minHeight: '80vh' }}
     >
       <Flex flex={{ '@initial': '1', '@1024': '1' }} p="x2" justify="center">
-        <img
+        {/*<img
           className={heroImage}
           src={ipfsImage(metadata?.imageURI || collection.editionMetadata?.imageURI)}
           alt={collection.name}
+  />*/}
+        <AudioRenderer
+          src={ipfsImage(metadata?.animationURI || collection?.editionMetadata?.animationURI)}
+          coverImageUrl={ipfsImage(metadata?.imageURI || collection?.editionMetadata?.imageURI)}
         />
       </Flex>
       <Box flex={{ '@initial': '1', '@1024': 'none' }} className={maxWidth} p="x4">
