@@ -13,6 +13,7 @@ import { collectionAddresses } from '@lib/constants'
 // import { ConnectWallet } from '@components/ConnectWallet'
 import { useAccount, useEnsName } from 'wagmi'
 import { Collection } from '@components/Collection'
+import { Backdrop } from '@components/Backdrop'
 
 interface HomePageProps {
   collections: SubgraphERC721Drop[]
@@ -66,7 +67,7 @@ const HomePage: NextPage<HomePageProps> = ({ collections }) => {
       {/*<Flex justify="flex-end" p="x4" className={header}>
         <ConnectWallet />
       </Flex>*/}
-      <Stack align="center" minH="100vh">
+      <Stack align="center" minH="100vh" p="x4">
         {collections.map((collection) => (
           <ERC721DropContractProvider
             key={collection.address + '_' + username}
@@ -80,6 +81,7 @@ const HomePage: NextPage<HomePageProps> = ({ collections }) => {
             </DropMetadataContractProvider>
           </ERC721DropContractProvider>
         ))}
+        <Backdrop src={collections[0]?.editionMetadata?.imageURI} />
       </Stack>
     </>
   )

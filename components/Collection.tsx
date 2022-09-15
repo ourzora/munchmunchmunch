@@ -40,18 +40,24 @@ export function Collection({
     <Flex
       mt="x3"
       align="center"
-      direction={{ '@initial': 'column', '@768': 'row-reverse' }}
-      gap="x3"
-      p={{ '@initial': 'x1', '@576': 'x10' }}
+      direction={{ '@initial': 'column', '@1024': 'row-reverse' }}
+      gap="x1"
+      p={{ '@initial': 'x2', '@576': 'x6' }}
       w="100%"
-      style={{ maxWidth: 1360, margin: 'auto', minHeight: '80vh' }}
+      style={{
+        maxWidth: 1360,
+        margin: 'auto',
+        zIndex: 10,
+        backgroundColor: 'rgba(255,255,255,0.7)'
+      }}
+      borderRadius="phat"
     >
-      <Flex flex={{ '@initial': '1', '@1024': '1' }} p="x2" justify="center">
+      <Flex flex={{ '@initial': '1', '@1024': '1' }} p="x0" justify="center">
         {/*<img
           className={heroImage}
           src={ipfsImage(metadata?.imageURI || collection.editionMetadata?.imageURI)}
           alt={collection.name}
-  />*/}
+        />*/}
         <AudioRenderer
           src={ipfsImage(metadata?.animationURI || collection?.editionMetadata?.animationURI)}
           coverImageUrl={ipfsImage(metadata?.imageURI || collection?.editionMetadata?.imageURI)}
